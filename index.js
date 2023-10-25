@@ -40,7 +40,31 @@ run().catch(console.dir);
 const addCosmeticsCollections = client.db('allCosmetics').collection('addCosmetics');
 
 
+app.get('/cosmeticsBands', (req, res) => {
+    res.send(cosmeticsBands)
+})
 
+
+
+app.get('/addCosmetics', async(req, res) => {
+    const cursor = addCosmeticsCollections.find()
+    const result = await cursor.toArray();
+    res.send(result)
+  })
+  
+  app.get('/addCosmetics/:id', async(req, res) => {
+    const id = req.params.id;
+    const query = { _id: new ObjectId(id)};
+    const result = await addCosmeticsCollections.findOne(query);
+    res.send(result);
+  })
+  app.get('/cosmetics/:brand', async(req, res) => {
+    const brand = req.params.brand;
+    console.log(brand);
+    const query = {brand: brand}
+    const result = await addCosmeticsCollections.find(query).toArray();
+    res.send(result)
+  })
 
 
 app.post('/addCosmetics', async(req, res) => {
