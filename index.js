@@ -38,6 +38,7 @@ async function run() {
 run().catch(console.dir);
 
 const addCosmeticsCollections = client.db('allCosmetics').collection('addCosmetics');
+const selectCosmeticsCollections = client.db('allCosmetics').collection('selectCart');
 
 
 app.get('/cosmeticsBands', (req, res) => {
@@ -93,6 +94,13 @@ app.post('/addCosmetics', async(req, res) => {
     const result = await addCosmeticsCollections.insertOne(cosmetic);
     res.send(result)
 })
+
+app.post('/selectCart', async(req, res) => {
+  const selectCosmetics = req.body;
+  const result = await selectCosmeticsCollections.insertOne(selectCosmetics)
+  res.send(result);
+ })
+
 
 
 
