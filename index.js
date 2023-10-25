@@ -37,6 +37,20 @@ async function run() {
 }
 run().catch(console.dir);
 
+const addCosmeticsCollections = client.db('allCosmetics').collection('addCosmetics');
+
+
+
+
+
+app.post('/addCosmetics', async(req, res) => {
+    const cosmetic = req.body;
+    const result = await addCosmeticsCollections.insertOne(cosmetic);
+    res.send(result)
+})
+
+
+
 
 app.get('/', (req, res) => {
     res.send('cosmetics world server is running')
