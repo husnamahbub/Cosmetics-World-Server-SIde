@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "image": "https://storage.googleapis.com/twg-content/images/loreal-paris-builds-brand-love-with-search_ca.width-1200.jpg",
+      "brand": "L'Oréal"
+    },
+    {
+      "id": 2,
+      "image": "https://static.vecteezy.com/system/resources/previews/023/400/675/original/chanel-brand-clothes-symbol-logo-with-name-black-design-fashion-illustration-free-vector.jpg",
+      "brand": "Chanel"
+    },
+    {
+      "id": 3,
+      "image": "https://1000logos.net/wp-content/uploads/2016/10/Avon-logo.jpg",
+      "brand": "Avon"
+    },
+    {
+      "id": 4,
+      "image": "https://workroom.co.uk/wp-content/uploads/2017/05/Coty_Case_study_New_Strapline_Master_BF.jpg",
+      "brand": "Coty "
+    },
+    {
+      "id": 5,
+      "image": "https://blog.mapleholistics.com/wp-content/uploads/2016/11/estee-lauder-logo.jpg",
+      "brand": "Estée Lauder"
+    },
+    {
+      "id": 6,
+      "image": "https://cdn.parfumdreams.de/Img/Cms/25/Banner-35586_1.jpg",
+      "brand": "Nive"
+    }
+  ]
