@@ -65,6 +65,27 @@ app.get('/addCosmetics', async(req, res) => {
     const result = await addCosmeticsCollections.find(query).toArray();
     res.send(result)
   })
+  
+  app.put('/addCosmetics/:id', async (req, res) => {
+    const id = req.params.id;
+    const filter = { _id: new ObjectId(id) }
+    const option = { upsert: true }
+    const updatedProducts = req.body;
+    const products = {
+        $set: {
+          photo: updatedProducts.photo,
+            name: updatedProducts.name,
+            rating: updatedProducts.rating,
+            price: updatedProducts.price,
+            brand: updatedProducts.brand,
+            category: updatedProducts.category,
+            details: updatedProducts.details,
+  
+        }
+    }
+    const result = await addCosmeticsCollections.updateOne(filter, products, option);
+    res.send(result)
+  })
 
 
 app.post('/addCosmetics', async(req, res) => {
