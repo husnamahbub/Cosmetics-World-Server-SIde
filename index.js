@@ -101,8 +101,18 @@ app.post('/selectCart', async(req, res) => {
   res.send(result);
  })
 
+ app.get('/selectCart', async(req, res) => {
+  const cursor = selectCosmeticsCollections.find()
+  const result = await cursor.toArray();
+  res.send(result);
+ })
 
-
+app.delete('/selectCart/:id', async(req, res) => {
+  const id = req.params.id;
+  const query = {_id: id}
+  const result = await selectCosmeticsCollections.deleteOne(query)
+  res.send(result);
+ })
 
 
 app.get('/', (req, res) => {
